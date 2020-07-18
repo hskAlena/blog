@@ -1,14 +1,15 @@
 ---
-title: "Post: Modified Date"
-last_modified_at: 2016-03-09T16:20:02-05:00
+title: "Mathematical Statistics: Probability Distribution"
+last_modified_at: 2020-07-18
 categories:
-  - Blog
+  - Mathematical Statistics
 tags:
-  - Post Formats
-  - readability
-  - standard
+  - Probability Distribution
+  - convex
 ---
 
-This post has been updated and should show a modified date if used in a layout.
-
-All children, except one, grow up. They soon know that they will grow up, and the way Wendy knew was this. One day when she was two years old she was playing in a garden, and she plucked another flower and ran with it to her mother. I suppose she must have looked rather delightful, for Mrs. Darling put her hand to her heart and cried, "Oh, why can't you remain like this for ever!" This was all that passed between them on the subject, but henceforth Wendy knew that she must grow up. You always know after you are two. Two is the beginning of the end.
+확률공간(probability space)는 (S, F, P)로 나타낼 수 있다.
+S는 표본공간(Sample space), F는 사건공간(Event space), P는 확률 측도(probability measure)이다.
+예를 들어, 
+S = {1, 2, 3}일때, F={\phi, {1}, {2,3}, {1,2,3}}이고 
+P(\phi)=0, P(S)=1, P({1})=\frac{1,3}, P({2,3})=\frac{2,3} 인 확률공간이 존재할 수 있다.
