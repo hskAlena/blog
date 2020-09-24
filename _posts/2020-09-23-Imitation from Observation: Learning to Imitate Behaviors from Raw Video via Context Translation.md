@@ -22,7 +22,7 @@ introduction
 Expert demonstration을 가지고 배우는 imitation learning은 Behavior cloning과 Inverse reinforcement learning으로 나뉘는데, 
  observation-action tuple을 가지고 배우는 거라 실생활과 거리가 있었다. 우리는 ego-centric observation과 ground truth action을 받으면서 보고 배우진 않으니까.
   
-![Alt text](/images/ifo_context_fig1.png)
+![Figure 1](/assets/images/ifo_context_fig1.png)
 
 Imitation-from-observation algorithm은 context translation model(third person view & human demo -> first person view & robot)에 based 되어있다.
  tracking demo behavior를 위한 Feature representation이 필요하고, deep RL로 action optimize를 한다. translation method는 useful perceptual rewrd function을 제공할 수 있다.
@@ -30,17 +30,20 @@ Imitation-from-observation algorithm은 context translation model(third person v
   
 Related work
 ===
+Imitation Learning이란?
 - learning a policy that generalizes to unseen states
   - helicopter flight trhough apprenticeship learning
   - put a ball in a cup and playing table tennis
   - human-like reaching motions
- ** teleoperation or kinesthetic teaching **
-  
+** teleoperation or kinesthetic teaching **
+ 
+Imitation Learning을 methodological하게 나눠보면:
 - behavior cloning (supervised learning)
  - imitation-from-observation 환경에서는  action이 주어지지 않고 different context이기 때문에 direct behavior cloning을 못한대.
 - inverse reinforcement learning (IRL)
  - expert demo에서 reward function 유추하고 RL을 통해 policy recovery하는 경우인데, image같은 high-dimensional observation에서는 쓰기 어렵대.
- 
+
+지금까지 비슷한 문제들(context differ관점에서)을 해결하려했던 논문들은
 1. expert와 non-expert policy를 직접 비교하고 complex manipulation task를 못한다.
 2. pretrained visual feature가 context가 바뀌어도 invariance를 가지는 것에 착안하여 한것. (context에 대한 고려 부족)
 3. invariance of visual features through multi-viewpoint 
@@ -49,6 +52,7 @@ Related work
 5. paired examples of state sequences을 이용해서 policy training - low-dimension에서만 하고, context shift가 없다.
  - 우리것은 action도 필요없고 raw observation으로도 충분하다 
  
+우리의 technical approach처럼 visual domain adaptation, image translation 하려했던 논문들은,
 - pixel level domain adaptation 
 - translation of visual style between domains using GAN, 
  - translating demonstrations from one context to another - GAN 쓰면 더 향상되긴 할거야.
@@ -62,6 +66,7 @@ problem formulation and overview
 ===
   
 "context" includes "viewpoint, background, positions, identities of object in the environment"
+
 Demonstrations $\{D_1, D_2, ... D_n\} = \{[o^{1}_{0}, o^{1}_{1}, ..., o^{1}_{T}], ... [o^{n}_{0}, o^{n}_{1}, ..., o^{n}_{T}]\}$
 consist of observations $o_t$ partially observed Markove process governed by 
 an observation distribution $p(o_t | s_t, w)$, dynamics $p(s_{t+1} | s_t, a_t, w)$, 
