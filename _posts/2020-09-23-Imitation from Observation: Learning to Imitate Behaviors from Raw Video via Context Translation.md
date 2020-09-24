@@ -55,12 +55,23 @@ Tasks : sweeping, pushing, pouring, striking
 <problem formulation and overview>
   
 "context" includes "viewpoint, background, positions, identities of object in the environment"
-{D1, D2, ... Dn} = {[o1,
-You'll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
+Demonstrations $\{D_1, D_2, ... D_n\} = \{[o^{1}_{0}, o^{1}_{1}, ..., o^{1}_{T}], ... [o^{n}_{0}, o^{n}_{1}, ..., o^{n}_{T}]\}$
+consist of observations $o_t$ partially observed Markove process governed by an observation distribution $p(o_t | s_t, w)$, dynamics $p(s_{t+1} | s_t, a_t, w)$, 
+and the expert's policy $p(a_t | s_t, w)$, each demo in different context $w$. $w$ is sampled independently from $p(w)$.
+$o^{i}_{t}$ refer to observation at time $t$ from context $w$.
 
-To add new posts, simply add a file in the `_posts` directory that follows the convention `YYYY-MM-DD-name-of-post.ext` and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.
+사실 learner's context는 demo's context와 다를테지만(body가 다르니), $p(w)$가 동일하다고 친다.
+두개의 challenge가 있다. 1. observation에서 어떤 information을 track할지 정해야한다. 내 context $w_l$와 demo거는 다르니까.
+2. 어떤 action이 demo observation을 track할 수 있는지 정해야한다. -> RL (demo와의 거리를 reward로 잡고 그 distance 좁히는 action)
+ => observation이 raw image pixel일땐 Euclidean distance는 well-shaped objective가 아닐듯.(semantically meaningful한가)
+ => 첫번째 문제의 해결점인 'context mismatch'가 distance metric 고르는데 도움준다. -> different demo를 training data로 넣고 context 바꾸는걸 학습하여 해결.
+ => proper context translation은 underlying factors of variation을 알아야한다. 
+ => squared Euclidean distance between features of context translation model as a reward function
+ 
+<Learning to translate between contexts>
 
-Jekyll also offers powerful support for code snippets:
+
+
 
 ```ruby
 def print_hi(name)
