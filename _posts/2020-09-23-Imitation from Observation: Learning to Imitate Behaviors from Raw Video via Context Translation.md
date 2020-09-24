@@ -67,7 +67,8 @@ problem formulation and overview
   
 "context" includes "viewpoint, background, positions, identities of object in the environment"
 
-Demonstrations $\{D_1, D_2, ... D_n\} = \{[o^{1}_{0}, o^{1}_{1}, ..., o^{1}_{T}], ... [o^{n}_{0}, o^{n}_{1}, ..., o^{n}_{T}]\}$
+Demonstrations 
+$\{D_1, D_2, ... D_n\} = \{[o^{1}_{0}, o^{1}_{1}, ..., o^{1}_{T}], ... [o^{n}_{0}, o^{n}_{1}, ..., o^{n}_{T}]\}$
 consist of observations $o_t$ partially observed Markove process governed by 
 an observation distribution $p(o_t | s_t, w)$, dynamics $p(s_{t+1} | s_t, a_t, w)$, 
 and the expert's policy $p(a_t | s_t, w)$, each demo in different context $w$. $w$ is sampled independently from $p(w)$.
