@@ -48,8 +48,14 @@ Imitation-from-observation algorithm은 context translation model(third person v
 -> translating demonstrations from one context to another - GAN 쓰면 더 향상되긴 할거야.
 
 Tasks : sweeping, pushing, pouring, striking
-1. low cost tool attachment & kinesthetic programming by demonstration
-2. simple PID controller with specified objective volume
+1. low cost tool attachment & kinesthetic programming by demonstration (sweeping)
+2. simple PID controller with specified objective volume (pouring) -> inferring objective from demo
+3. predictive models on point-cloud data and uses a significantly different intuitive physics model with depth data. (pushing)
+
+<problem formulation and overview>
+  
+"context" includes "viewpoint, background, positions, identities of object in the environment"
+{D1, D2, ... Dn} = {[o1,
 You'll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
 
 To add new posts, simply add a file in the `_posts` directory that follows the convention `YYYY-MM-DD-name-of-post.ext` and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.
@@ -64,8 +70,3 @@ print_hi('Tom')
 #=> prints 'Hi, Tom' to STDOUT.
 ```
 
-Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
-
-[jekyll-docs]: https://jekyllrb.com/docs/home
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-talk]: https://talk.jekyllrb.com/
