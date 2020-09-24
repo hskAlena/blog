@@ -85,4 +85,30 @@ $o^{i}_{t}$ refer to observation at time $t$ from context $w$.
  
 Learning to translate between contexts
 ===
+context translation model은 $D_i$ 와 $D_j$를 비교함으로써 학습시킨다.
+output은 observations in $D_j$ conditioned on $D_i$. Target context에서의 한 observation만 보고 future observation in that context를 예측할 수 있다.
 
+$D_i$와 $D_j$는 time aligned하다 가정하지만 iterative time alignment를 이용해 가정을 완화시킬 수 있다.
+$M(o^{i}_{t}, o^{j}_{0}) = (o^{j}_{t})_trans$
+
+![Figure 2](/assets/images/ifo_context_fig2.png)
+
+4가지 구성성분으로 이루어진다.
+1. source observation encoder $z_1$
+2. target initial observation encoder $z_2$
+3. translator $z_3 = T(z_1, z_2)$
+4. target context decoder $Dec(z_3)$
+Encoder 1과 2는 different weight를 가져도, tied weights를 가져도 된다.
+Encoder 2와 Decoder는 skip connection을 가진다. - reconstruction 위해.
+Loss1는 squared error loss.
+
+$z_3$가 useful info가지려면 $z_1$과 공통으로 가지는 부분이 있어야하기 때문에
+Encoder 1과 Decoder는 하나의 autoencoder로 구성하였다. 
+$$L2 = |Dec(Enc_1(o^{j}_{t})) - o^{j}_{t}|^{2}_{2}$$
+Encoder 1의 feature representation이 $z_3$와 잘 맞아야하기 때문에 align loss도 넣었다.
+$$L3 = |z_3 - Enc_1(o^{j}_{t}|^2_2$$
+
+**encoded features of learning trajectories와 translated features of experts는 같은 feature space에 있어야만 reward function이 제대로 기능한다.**
+
+Learning policies via context translation
+===
