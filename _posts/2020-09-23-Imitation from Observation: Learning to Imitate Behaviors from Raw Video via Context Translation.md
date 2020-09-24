@@ -10,9 +10,9 @@ tags:
 use_math: true
 ---
 
-<abstract>
-사람들은 changes in viewpoint, surroundings, object positions and types, and other factors에 상관없이 다른 사람의 행동을 보고 따라할 수 있다.
--> video prediction with context translation and deep reinforcement learning을 이용해 문제를 풀어보겠다.
+> <abstract>
+> 사람들은 changes in viewpoint, surroundings, object positions and types, and other factors에 상관없이 다른 사람의 행동을 보고 따라할 수 있다.
+> -> video prediction with context translation and deep reinforcement learning을 이용해 문제를 풀어보겠다.
   
 <introduction>
 보통 autonomous agent가 skill을 배울 때 reward function(어떤 state와 action이 desirable한지), expert demonstration을 가지고 배우는데, 
