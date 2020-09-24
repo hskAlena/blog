@@ -10,11 +10,13 @@ tags:
 use_math: true
 ---
 
-> <abstract>
-> 사람들은 changes in viewpoint, surroundings, object positions and types, and other factors에 상관없이 다른 사람의 행동을 보고 따라할 수 있다.
-> -> video prediction with context translation and deep reinforcement learning을 이용해 문제를 풀어보겠다.
+abstract
+===
+사람들은 changes in viewpoint, surroundings, object positions and types, and other factors에 상관없이 다른 사람의 행동을 보고 따라할 수 있다.
+-> video prediction with context translation and deep reinforcement learning을 이용해 문제를 풀어보겠다.
   
-<introduction>
+introduction
+===
 보통 autonomous agent가 skill을 배울 때 reward function(어떤 state와 action이 desirable한지), expert demonstration을 가지고 배우는데, 
  reward function은 hand-crafted라서 complex observation이 필요한 task에선 적절한 것을 찾기 어렵다.
 Expert demonstration을 가지고 배우는 imitation learning은 Behavior cloning과 Inverse reinforcement learning으로 나뉘는데, 
@@ -24,7 +26,8 @@ Imitation-from-observation algorithm은 context translation model(third person v
  tracking demo behavior를 위한 Feature representation이 필요하고, deep RL로 action optimize를 한다. translation method는 useful perceptual rewrd function을 제공할 수 있다.
 다른 연구에서는 invariant feature space를 구한다든가, adversarial imitation learning, track pre-trained visual feature을 하는데 우리것이 제일 robust하다. 
   
-<Related work>
+Related work
+===
 - learning a policy that generalizes to unseen states
  ex) - helicopter flight trhough apprenticeship learning
      - put a ball in a cup and playing table tennis
@@ -53,7 +56,8 @@ Tasks : sweeping, pushing, pouring, striking
 2. simple PID controller with specified objective volume (pouring) -> inferring objective from demo
 3. predictive models on point-cloud data and uses a significantly different intuitive physics model with depth data. (pushing)
 
-<problem formulation and overview>
+problem formulation and overview
+===
   
 "context" includes "viewpoint, background, positions, identities of object in the environment"
 Demonstrations $\{D_1, D_2, ... D_n\} = \{[o^{1}_{0}, o^{1}_{1}, ..., o^{1}_{T}], ... [o^{n}_{0}, o^{n}_{1}, ..., o^{n}_{T}]\}$
@@ -69,16 +73,6 @@ $o^{i}_{t}$ refer to observation at time $t$ from context $w$.
  => proper context translation은 underlying factors of variation을 알아야한다. 
  => squared Euclidean distance between features of context translation model as a reward function
  
-<Learning to translate between contexts>
-
-
-
-
-```ruby
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
-```
+Learning to translate between contexts
+===
 
