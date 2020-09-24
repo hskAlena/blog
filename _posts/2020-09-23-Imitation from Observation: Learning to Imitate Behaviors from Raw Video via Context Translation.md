@@ -112,3 +112,19 @@ $$L3 = |z_3 - Enc_1(o^{j}_{t}|^2_2$$
 
 Learning policies via context translation
 ===
+reward functions for feature tracking
+---
+translated features에서 많이 벗어날수록 penalty
+minimize squared Euclidean distance between encoding of current observation to average of translated demonstrated features
+
+feature tracking으로 부족할 수 있으니 image tracking reward도 넣자.
+out-of-distribution sample이 많으면 encoding이 잘 안될 수 있으니까.
+
+Reinforcement learning Algorithm for feature tracking
+---
+TRPO를 시뮬레이션에서 쓰고 실제 환경에선 trajectory-centric RL method used for local policy optimization in guided policy search (fitting locally linear dynamics and performing LQR-based updates)
+
+cost function for GPS 는 squared Euclidean distance in state space였고 image tracking cost는 뺐다. simulated striking 과 real robot pushing에서는 cost function을 quadratic ramp function weighting squared Euclidean distance at later time steps 하였다.
+
+Experiments
+===
