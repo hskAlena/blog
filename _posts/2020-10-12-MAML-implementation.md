@@ -38,3 +38,18 @@ Queue-based input pipelines have been replaced by `tf.data`. Use `tf.data.Datase
 
 # 2. pipfile이 설치 관련 버전인듯
 
+
+ File "/home/hskim/mil/mil.py", line 254, in forward
+    context = tf.transpose(tf.gather(tf.transpose(tf.zeros_like(flatten_image)), range(FLAGS.bt_dim))) 
+ValueError: Tried to convert 'indices' to a tensor and failed. Error: Argument must be a dense tensor: range(0, 20) - got shape [20], but wanted [].
+  
+  --> list(range()) 로 바꾸기!
+  
+  File "/home/hskim/mil/mil.py", line 530, in batch_metalearn
+    grads = tf.gradients(local_lossa, weights.values())
+
+TypeError: Failed to convert object of type <class 'dict_values'> to Tensor. Contents: dict_values([<tf.Tensor 'model/clip_by_value:0' shape=(125, 125, 3) dtype=float32>, <tf.Variable 'model/wc1:0' shape=(5, 5, 6, 16) dtype=float32_ref>, <tf.Variable 'model/bc1:0' shape=(16,) dtype=float32_ref>, <tf.Variable 'model/wc2:0' shape=(5, 5, 16, 16) dtype=float32_ref>, <tf.Variable 'model/bc2:0' shape=(16,) dtype=float32_ref>, <tf.Variable 'model/wc3:0' shape=(5, 5, 16, 16) dtype=float32_ref>, <tf.Variable 'model/bc3:0' shape=(16,) dtype=float32_ref>, <tf.Variable 'model/wc4:0' shape=(5, 5, 16, 16) dtype=float32_ref>, <tf.Variable 'model/bc4:0' shape=(16,) dtype=float32_ref>, <tf.Variable 'model/context:0' shape=(20,) dtype=float32_ref>, <tf.Variable 'model/w_0:0' shape=(72, 200) dtype=float32_ref>, <tf.Variable 'model/b_0:0' shape=(200,) dtype=float32_ref>, <tf.Variable 'model/w_1:0' shape=(200, 200) dtype=float32_ref>, <tf.Variable 'model/b_1:0' shape=(200,) dtype=float32_ref>, <tf.Variable 'model/w_2:0' shape=(200, 7) dtype=float32_ref>, <tf.Variable 'model/b_2:0' shape=(7,) dtype=float32_ref>, <tf.Variable 'model/w_2_two_heads:0' shape=(200, 7) dtype=float32_ref>, <tf.Variable 'model/b_2_two_heads:0' shape=(7,) dtype=float32_ref>]). Consider casting elements to a supported type.
+
+  
+
+
