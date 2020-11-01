@@ -8,10 +8,10 @@ tags:
   - learning from observation
 ---
 
-## state-only demonstration
+# state-only demonstration
 ===
 
-# Model-based IfO
+## Model-based IfO
 
 **learn explicit model of environment**
 - BCO infer exact action with learned inverse dynamics model. 그렇게 얻은 (s,a)로 BC 돌림. 
@@ -26,17 +26,17 @@ tags:
 - predicted state와 actual demo를 비교해서 model과 imitation policy update
 - environment와 상호작용하며 action label을 고침.
 
-# ???
+## ???
 **LfO with Hand-crafted Reward and Forward RL**
 
 - DeepMimic은 reward가 agent to directly match expert's physical proprieties(joint angles and velocities)하게 디자인하고, forward RL을 돌려서 policy를 배운다.
 - reward function이 expert action을 고려하지 않기때문에 action에서 reward를 얻는 task는 해결하기 어렵다.
 
-# plan/goal recognition through mirroring
+## plan/goal recognition through mirroring
 - fixed controller를 이용해서 plan/goal infer인데,
 - IfO에서는 controller도 배워야하니 기각.
 
-# model-free IfO
+## model-free IfO
 **Imitation Learning from Observations by Minimizing Inverse Dynamics Disagreement**
 
 - upper bound of gap between LfD and LfO is revealed by a negative causal entropy which can be minimized in a model-free way.
@@ -57,17 +57,17 @@ tags:
 - proprioceptive state representation 이랑 demo를 visually 비교하면서 policy 배우기.
 - GAIfO에다가 proprioception 붙인거.
 
-## Dealing with images
+# Dealing with images
 ===
 
 1. Time-contrastive networks: self-supervised learning from multi-view observation
 **learn time-dependent representation of tasks & hand-designed, time-aligned reward function**
-- embedding function using triplet loss function으로 가까운 state는 붙이고 나머지는 떨어뜨리기.
+  - embedding function using triplet loss function으로 가까운 state는 붙이고 나머지는 떨어뜨리기.
 
 1. Imitation from observation: learning to imitate behavrios from raw video via context translation
 **state representation handling viewpoint difference**
 **video prediction with context translation and deep RL**
-- high-dimensional input인 image에 IRL을 적용하기는 힘들다.
+  - high-dimensional input인 image에 IRL을 적용하기는 힘들다.
 
 1. One-shot learning of multi-step tasks from observation via activity localization in auxiliary video.
 **shuffle-and-learn style loss로 task progress predict하는 neural network를 reward function으로**
