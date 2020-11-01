@@ -1,5 +1,5 @@
 ---
-title: "Imitation from Observation Setup"
+title: "Imitation from Observation RLLab Setup"
 categories:
   - Installment
 tags:
@@ -137,44 +137,10 @@ https://m.blog.naver.com/kimmingul/221339305735
 
 # 14. Install VLC player to watch expert mp4 files
 
-libcufft.so.10.0'; dlerror: libcufft.so.10.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/hskim/catkin_ws/devel/lib:/opt/ros/kinetic/lib:/opt/ros/kinetic/lib/x86_64-linux-gnu:/usr/local/cuda/lib64:/usr/lib/x86_64-linux-gnu
-2020-10-08 17:40:03.166569: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'libcurand.so.10.0'; dlerror: libcurand.so.10.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/hskim/catkin_ws/devel/lib:/opt/ros/kinetic/lib:/opt/ros/kinetic/lib/x86_64-linux-gnu:/usr/local/cuda/lib64:/usr/lib/x86_64-linux-gnu
-2020-10-08 17:40:03.166724: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'libcusolver.so.10.0'; dlerror: libcusolver.so.10.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/hskim/catkin_ws/devel/lib:/opt/ros/kinetic/lib:/opt/ros/kinetic/lib/x86_64-linux-gnu:/usr/local/cuda/lib64:/usr/lib/x86_64-linux-gnu
-2020-10-08 17:40:03.166874: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'libcusparse.so.10.0'; dlerror: libcusparse.so.10.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/hskim/catkin_ws/devel/lib:/opt/ros/kinetic/lib:/opt/ros/kinetic/lib/x86_64-linux-gnu:/usr/local/cuda/lib64:/usr/lib/x86_64-linux-gnu
-
-Error while instantiating <class 'rllab.algos.trpo.TRPO'>
-Traceback (most recent call last):
-  File "/home/hskim/imitation_from_observation/rllab/misc/instrument.py", line 1493, in concretize
-    *args, **kwargs)
-  File "/home/hskim/imitation_from_observation/rllab/algos/trpo.py", line 20, in __init__
-    super(TRPO, self).__init__(optimizer=optimizer, **kwargs)
-  File "/home/hskim/imitation_from_observation/rllab/algos/npo.py", line 30, in __init__
-    super(NPO, self).__init__(**kwargs)
-  File "/home/hskim/imitation_from_observation/rllab/algos/batch_polopt.py", line 107, in __init__
-    self.sampler = sampler_cls(self, **sampler_args)
-  File "/home/hskim/imitation_from_observation/rllab/algos/batch_polopt.py", line 15, in __init__
-    super(BatchSampler, self).__init__(algo)
-  File "/home/hskim/imitation_from_observation/rllab/sampler/base.py", line 56, in __init__
-    self.initialize()
-  File "/home/hskim/imitation_from_observation/rllab/sampler/base.py", line 145, in initialize
-    saver.restore(sess, self.algo._kwargs['modelname'])
-  File "/home/hskim/miniconda/envs/rllab3/lib/python3.5/site-packages/tensorflow_core/python/training/saver.py", line 1282, in restore
-    checkpoint_prefix)
-ValueError: The passed save_path is not a valid checkpoint: model/ctxskipstartgoalvpdistract53723
-Traceback (most recent call last):
-  File "/home/hskim/imitation_from_observation/scripts/run_experiment_lite.py", line 136, in <module>
-    run_experiment(sys.argv)
-  File "/home/hskim/imitation_from_observation/scripts/run_experiment_lite.py", line 123, in run_experiment
-    maybe_iter = concretize(data)
-  File "/home/hskim/imitation_from_observation/rllab/misc/instrument.py", line 1475, in concretize
-    obj = concretize(maybe_stub.obj)
-  File "/home/hskim/imitation_from_observation/rllab/misc/instrument.py", line 1499, in concretize
-    ret = maybe_stub.__stub_cache
-  File "/home/hskim/imitation_from_observation/rllab/misc/instrument.py", line 158, in __getattr__
-    raise AttributeError('Cannot get attribute %s from %s' % (item, self.proxy_class))
-AttributeError: Cannot get attribute __stub_cache from <class 'rllab.algos.trpo.TRPO'>
-
-
-
+# 15. LD library path (cuda 10.0) 바꿔주기
+libcufft.so.10.0'; dlerror: libcufft.so.10.0: cannot open shared object file: No such file or directory; 
+2020-10-08 17:40:03.166569: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'libcurand.so.10.0'; dlerror: libcurand.so.10.0: cannot open shared object file: No such file or directory; 
+'libcusolver.so.10.0';
+'libcusparse.so.10.0';
 
 
