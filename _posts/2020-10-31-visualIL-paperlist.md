@@ -59,19 +59,9 @@ tags:
 
 # Dealing with images
 
+## correspondence problem (trajectory 따라하기)
 
-1. Time-contrastive networks: self-supervised learning from multi-view observation
-  **learn time-dependent representation of tasks & hand-designed, time-aligned reward function**
-  - embedding function using triplet loss function으로 가까운 state는 붙이고 나머지는 떨어뜨리기.
 
-1. Imitation from observation: learning to imitate behavrios from raw video via context translation
-  **state representation handling viewpoint difference**
-  **video prediction with context translation and deep RL**
-  - high-dimensional input인 image에 IRL을 적용하기는 힘들다.
-  - visual domain adaptation & image translation
-  1. limitation: demo가 많이 필요함. higher level representation을 갖다쓰면 좀 나을듯.
-  2. limitation: demo가 multiple context에 필요하다. multiple task를 한 model로 배울 수 있다면 자동으로 multiple context가 갖춰질듯.
-  3. future: explicit handling of domain shift가 보충되면 좋겠다.
 
 1. One-shot learning of multi-step tasks from observation via activity localization in auxiliary video.
 **shuffle-and-learn style loss로 task progress predict하는 neural network를 reward function으로**
@@ -79,18 +69,51 @@ tags:
 1. Playing hard exploration games by watching youtube.
 **self-supervised objective로 embedding 배우고 current state와 demo의 checkpoint와의 차이를 reward function으로**
 
-1. Third-person imitation learning
-   **domain shift, but access to expert and non-expert policy needed & optimize for invariance between only two contexts**
-   **complex task는 잘 못함**
+
    
-1. Unsupervised perceptual rewards for imitation learning
-  **pretrained visual feature를 이용해 context difference를 해결하려함. inherent invariance of visual feature through multi-view point**
+
   
 1. Learning robot activities from first-person human videos using convolutional future regression
   - explicit hand detection & engineered vision pipeline 통해서 first-person video of human보고 배움. (end-to-end가 안되고 prior visual feature, detector, vision system이 필요함)
 
 1. One-shot imitation learning
   - paired state sequence를 policy에 넣어 학습. low-dimension에서만 가능하다.
+  
+1. Online customization of teleoperation interfaces.
+
+1. One-shot imitation from observing humans via domain-adaptive meta-learning
+
+## Goal or reward recognition 
+
+1. Third-person imitation learning
+   **domain shift, but access to expert and non-expert policy needed & optimize for invariance between only two contexts**
+   **complex task는 잘 못함**
+   
+1. Time-contrastive networks: self-supervised learning from multi-view observation
+  **learn time-dependent representation of tasks & hand-designed, time-aligned reward function**
+  - embedding function using triplet loss function으로 가까운 state는 붙이고 나머지는 떨어뜨리기.
+  - human pose 뿐만아니라 object interaction도 배운다. 
+
+1. Unsupervised perceptual rewards for imitation learning
+  **pretrained visual feature를 이용해 context difference를 해결하려함. inherent invariance of visual feature through multi-view point**
+
+1. Imitation from observation: learning to imitate behaviors from raw video via context translation
+  **state representation handling viewpoint difference**
+  **video prediction with context translation and deep RL**
+  - high-dimensional input인 image에 IRL을 적용하기는 힘들다.
+  - visual domain adaptation & image translation
+  1. limitation: demo가 많이 필요함. higher level representation을 갖다쓰면 좀 나을듯.
+  2. limitation: demo가 multiple context에 필요하다. multiple task를 한 model로 배울 수 있다면 자동으로 multiple context가 갖춰질듯.
+  3. future: explicit handling of domain shift가 보충되면 좋겠다.
+  
+1. Autonomy infused teleoperation with application to bci manipulation.
+
+1. First-person activity forecasting with online inverse reinforcement learning.
+
+1. Socially-compliant navigation through raw depth inputs with generative adversarial imitation learning.
+
+1. What would you do? acting by learning to predict.
+
   
 ## robotics?
 
@@ -101,4 +124,20 @@ tags:
 1. Se3-nets: Learning rigid body motion using deep neural networks.
 
 
+## Label-free training signals (self/un-supervised feature extraction)
 
+**multiple modalities and temporal or spatial coherence to extract embeddings and features**
+1. co-occurrence of sounds and visual cues in videos to learn meaningful visual features
+1. cross-channel input reconstruction
+1. spatial coherence in images as a self-supervision signal
+1. motion cues to self-supervised a segmentation task
+1. temporal coherence
+1. viewpoint invariance using metric learning
+1. prediction as a learning signal
+
+
+# Questions
+
+- training 단계에서 얻는 prior knowledge의 형태가 굳이 network parameter의 형태여야하는가. 
+- 그런 형태의 prior knowledge는 multi-task 하고 지속가능한가. (network 자체를 저장할 것인가)
+- 
