@@ -139,5 +139,7 @@ tags:
 # Questions
 
 - training 단계에서 얻는 prior knowledge의 형태가 굳이 network parameter의 형태여야하는가. 
-- 그런 형태의 prior knowledge는 multi-task 하고 지속가능한가. (network 자체를 저장할 것인가)
-- 
+  얻은 결과물에 대해 해석할 도구가 필요하긴 한데.
+- 그런 형태의 prior knowledge는 multi-task 하고 지속가능한가. (network 자체를 저장할 것인가) 
+  시각 network에선 그냥 representation 받아서, 그걸 후처리해서 action과 연결시키든지 하는거로 하자. 
+- 그럼 시각처리랑 분리해놓은 논문은 뭐가있을까.
