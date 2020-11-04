@@ -69,10 +69,6 @@ tags:
 1. Playing hard exploration games by watching youtube.
 **self-supervised objective로 embedding 배우고 current state와 demo의 checkpoint와의 차이를 reward function으로**
 
-
-   
-
-  
 1. Learning robot activities from first-person human videos using convolutional future regression
   - explicit hand detection & engineered vision pipeline 통해서 first-person video of human보고 배움. (end-to-end가 안되고 prior visual feature, detector, vision system이 필요함)
 
@@ -113,6 +109,25 @@ tags:
 1. Socially-compliant navigation through raw depth inputs with generative adversarial imitation learning.
 
 1. What would you do? acting by learning to predict.
+
+1. Third-Person visual imitation learning via decoupled hierarchical controller
+ - learn to understande intent & execute on its environment configuration.
+ - decouple what to achieve (intended task) from how to perform (controller)
+ - generate sub-goals & predict action to achieve subgoals
+ **domain adaptation(transfer in visual space, sim to real, map data points from one domain to another, domain invariant representations)**
+ 
+ **physical configuration도 다르기 때문에 그런것도 해결해야한다.**
+ 
+ <domain invariant representations>
+ Deep domain confusion: maximizing for domain invariance
+ Real single-image flight without a single real image.
+  
+  **visual foresight - self-supervised robot manipulation**
+  - action conditioned visual space predictions. 근데 대부분 hand-specified goals
+  
+ 
+ 
+
 
   
 ## robotics?
