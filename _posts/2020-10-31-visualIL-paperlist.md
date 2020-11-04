@@ -1,5 +1,5 @@
 ---
-title: "visual imitation learning paper lists"
+title: "visual imitation learning related works paper lists"
 categories:
   - paper list
 tags:
@@ -74,6 +74,25 @@ tags:
 
 1. One-shot imitation learning
   - paired state sequence를 policy에 넣어 학습. low-dimension에서만 가능하다.
+  <feature engineering / 많은 sample> - meta-learning framework
+  2개 demo 중에 second로부터 state를 받아서 1st의 traj대로 학습시킨다. 
+  soft attention을 이용해서 generalize를 한다.
+  
+  **<survey papers>**
+  - A survey of robot learning from demonstration.
+  - Robot programming by demonstration.
+  - Is imitation learning the route to humanoid robots?
+  
+  **Fast adaptation has been achieved through fast-weights**
+  - Using fast weights to attent to the recent past.
+  
+  <multitask & transfer learning도 다양한 task를 좀 더 빨리 배우는 것에 지나지않을뿐 직접 새로운 skill을 한번의 demo만 보고도 알아내는 게 아니얌>
+  
+  <soft attention>
+  - Neural machine translation by jointly learning to align and translate
+  <interaction network>
+    - Interaction networks for learning about objects, relations and physics.
+    - A compositional object-based approach to learning physical dynamics.
   
 1. Online customization of teleoperation interfaces.
 
@@ -89,6 +108,11 @@ tags:
   **learn time-dependent representation of tasks & hand-designed, time-aligned reward function**
   - embedding function using triplet loss function으로 가까운 state는 붙이고 나머지는 떨어뜨리기.
   - human pose 뿐만아니라 object interaction도 배운다. 
+  
+  <motion cues>
+  - Unsupervised visual representation learning by context prediction
+  - Learning to compare image patches via convolutional neural networks
+  - Learning features by watching objects move.
 
 1. Unsupervised perceptual rewards for imitation learning
   **pretrained visual feature를 이용해 context difference를 해결하려함. inherent invariance of visual feature through multi-view point**
